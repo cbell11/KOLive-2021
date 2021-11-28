@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>KO Live</title>
+<link rel="icon" href = 'https://www.knockout.fun/img/kolive/LIVE_favicon.ico' type="image/ico">
+<link href="https://fonts.googleapis.com/css?family=Catamaran:500&display=swap" rel="stylesheet">
+
+
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+
+  <!-- Ensure that everything scales appropriately on a mobile device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Let's borrow a cool looking Font from Google -->
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/ico">
+
+</head>
+
+<body>
+
+
+  <div id="gameArea">
+    <!-- This is where the templates defined below will be used -->
+  </div>
+  <!-- Main Title Screen that appears when the page loads for the first time -->
+  <!--<script id="intro-screen-template" type="text/template">
+
+    <div class="titleWrapper">oo
+      </div>
+      <br><br><br><br>
+      <div class="buttons">
+        <button id="btnJoinGame" class="btn right">JOIN</button>
+        <div style="clear:both"></div>
+      </div>
+
+
+    </div>
+
+  </script>-->
+  <!-- This screen appears when a user clicks "CREATE" on the Title Screen -->
+  <script id="create-game-template" type="text/template">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <main class="HOST_koLiveBG">
+    <div class="createGameWrapper">
+      <div class="info" id = 'gameCode'>1. Open this site on your mobile device:</div>
+      <div id="gameURL" class="infoBig">Error!</div>
+      <div class="info">2. Then enter the following Game ID:</div>
+      <div id="spanNewGameCode" class="gameId">Error!</div>
+      <div id = 'createGameContainer'>
+      <button id = 'preTeamsBtn' class = 'btn btn-primary' value = 'createGame' disabled><p style="margin-top: -8px;">Waiting on +4 Students<p></button>
+    </div>
+          <div class="row" style=" text-align:center; margin:80px auto; width: 100%; margin-left: -2%;">
+            <div class="col-md">
+              <ul id= 'playersWaiting1'>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul id= 'playersWaiting2'>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul id= 'playersWaiting3'>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul id= 'playersWaiting4'>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul id= 'playersWaiting5'>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul id= 'playersWaiting6'>
+              </ul>
+            </div>
+
+          </div>
+    </div>
+  </main>
+  </script>
+  <!-- This scrreen appears when a player clicks "JOIN" on the Title Screen -->
+  <script id="join-game-template" type="text/template">
+    <div class="joinGameWrapper HOST_koLiveBG" style="background-position: center;">
+      <div class="info">
+        <label for="inputPlayerName">Your Name:</label>
+        <input id="inputPlayerName" type="text" />
+      </div>
+
+      <div class="info">
+        <label for="inputGameId">Game ID:</label>
+        <input id="inputGameId" type="number" step="0.01"/>
+      </div>
+
+      <div class="info buttons">
+        <div>
+        <button id="btnStart" class="btn">Start</button>
+      </div>
+        <div id="playerWaitingMessage"></div>
+      </div>
+    </div>
+  </script>
+  <!-- Groupings Template -->
+  <!-- HOST GROUPINGS DISPLAY-->
+  <script id= "host-pre-game-template" type="text/template">
+    <!--<div class="title">
+      KNOCKOUT
+    </div>-->
+    <div class="teamGameWrapper HOST_koLiveBG" >
+      <!--INSERT SHUFFLE TEAMS BUTTON-->
+      <div id = 'pre-game-wrapper'class="w3-row">
+        <div class='w3-col s4 w3-center'>
+        <button id = 'btnBeginGame' class = 'btn btn-primary' value = 'startBeginGame'>Start</button>
+      </div>
+      <div class='w3-col s4 w3-center'>
+        <button id = 'shuffleBtn' class = 'btn ' value = 'shuffleTeams'><i class="fas fa-sync"></i></button>
+      </div>
+      <div class='w3-col s4 w3-center'>
+
+              <div class="switch-field">
+                  <!--<div class="switch-title">Time of Game</div><br>-->
+                  <form id = 'timeForm'>
+                  <input type="radio" id="switch_3_left" name="switch_3" value="10"/>
+                  <label for="switch_3_left">10 Min</label>
+                  <input type="radio" id="switch_3_center" name="switch_3" value="5"checked/>
+                  <label for="switch_3_center">5 Min</label>
+            			<input type="radio" id="switch_3_right" name="switch_3" value="3" />
+                  <label for="switch_3_right">3 Min</label>
+                </form>
+            </div>
+      </div>
+      </div>
+
+      <br>
+
+      <div class = 'container' style = 'text-align: center; width: 100%;'>
+      <div id = 'teamsTable' class = 'row'>
+        <div class="col-sm-4">
+          <h3 id = 'teamName1' hidden><u>Team 1</u></h3>
+          <div id = 'team1'></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 id = 'teamName2' hidden><u>Team 2</u></h3>
+          <div id = 'team2'></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 id = 'teamName3' hidden><u>Team 3</u></h3>
+          <div id = 'team3'></div>
+        </div>
+      </div>
+      <div id = 'teamsTable' class = 'row'>
+        <div class="col-sm-4">
+          <h3 id = 'teamName4' hidden><u>Team 4</u></h3>
+          <div id = 'team4'></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 id = 'teamName5' hidden><u>Team 5</u></h3>
+          <div id = 'team5'></div>
+        </div>
+        <div class="col-sm-4">
+          <h3 id = 'teamName6' hidden><u>Team 6</u></h3>
+          <div id = 'team6'></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </script>
+  <!-- PLAYER GROUPINGS DISPLAY-->
+  <script id= "player-pre-game-template" type="text/template">
+
+    <div class="HOST_koLiveBG">
+      <div class = 'container' style = 'text-align: center; width: 100%;'>
+      <div id = 'teamsTable' class = 'row'>
+        <div class="col-sm-12">
+          <!--<h3 id = 'playerTeamName'><u>Look on the screen AND find your team!</u></h3>-->
+          <div id = 'teamMembers' style="margin-top: 100px;"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </script>
+  <!-- This is the 'Host' screen. It displays the word for each player to match -->
+  <script id="host-game-template" type="text/template">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <div><strong>Game Code: </strong><span id = 'gameCodeDisplay'></span></div>
+    <div id="wordArea">
+      <div id = "hostWord">5</div>
+    </div>
+    </div>
+    <div id="progressBar">
+      <div></div>
+    </div>
+    <div id = 'w3-row-1' class="w3-row">
+    </div>
+    <br><br><br>
+    <div id = 'w3-row-2' class="w3-row">
+    </div>
+
+
+  </script>
+  <script id="player1-game-template" type="text/template">
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+        <span class="playerName"></span><span class="score">Team 1</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-1-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+  </script>
+  <script id="player2-game-template" type="text/template">
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+        <span class="playerName"></span><span class="score">Team 2</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-2-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+
+
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+
+
+  </script>
+  <script id="player3-game-template" type="text/template">
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+        <span class="playerName"></span><span class="score">Team 3</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-3-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+
+
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+
+
+  </script>
+  <script id="player4-game-template" type="text/template">
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+      <span class="playerName"></span><span class="score">Team 4</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-4-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+
+
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+
+
+  </script>
+  <script id="player5-game-template" type="text/template">
+
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+        <span class="playerName"></span><span class="score">Team 5</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-5-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+
+
+  </script>
+  <script id="player6-game-template" type="text/template">
+    <div id="playerScores">
+      <div id="playerScore" class="playerScore">
+        <span class="playerName"></span><span class="score">Team 6</span>
+      </div>
+    </div>
+    <div class = 'outer2' id = 'deductMessage'>
+        <div class = 'inner' id ='negativePoints'>
+        </div>
+    </div>
+    <div class = 'outer' id = 'incorrectMessage' hidden>
+        <div class = 'inner' id ='wrongAnswer'>Ouch! Sorry wrong answer! </div>
+    </div>
+    <div class = 'outer' id = 'correctMessage' hidden>
+        <div class = 'inner' id ='rightAnswer'>Correct! Great Job </div>
+    </div>
+    <div id = 'player-6-body'>
+    <div id="playerWordDiv">
+      <div id="playerWord"></div>
+    </div>
+
+
+    <div id = 'answerDiv'>
+    </div>
+  </div>
+
+
+  </script>
+
+  <script id="player-team-select-template" type="text/template">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <div id = 'teamSelect'>
+        <div id = 'w3-teamDeduct-row-1' class="w3-row">
+        </div>
+        <br><br><br>
+      <div id='w3-teamDeduct-row-3' class="w3-row">
+    </div>
+  </div>
+      <!--<button class = 'deductTeamBtn' id = 'deductTeam1' type = 'button'>Team 1</button>
+      <button class = 'deductTeamBtn' id = 'deductTeam2' type = 'button'>Team 2</button>-->
+    <!--</div>-->
+
+
+  </script>
+  <!-- JavaScript Libraries -->
+  <!-- jQuery! -->
+  <script src="libs/jquery-2.0.2.min.js"></script>
+  <!-- TextFit resizes text to fill a container.
+        It's used so the titles and game words fit properly on any size screen.
+        https://github.com/STRML/textFit   -->
+  <script src="libs/textFit.min.js"></script>
+  <!-- FastClick is used to eliminate the 300ms delay when clicking items on a mobile device
+        https://github.com/ftlabs/fastclick -->
+  <script src="libs/fastclick.js"></script>
+  <!-- If Socket.IO is used with Express, then the /socket.io/ path will
+        serve the proper Socket.IO javascript files used by the browser -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- app.js is where all the client-side Anagrammatix game logic -->
+  <script src="app.js"></script>
+</div>
+</html>

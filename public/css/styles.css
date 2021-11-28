@@ -1,0 +1,1085 @@
+/*
+
+ Dark Green : #78BD4C
+  Mid Green : #A8FF56
+       Lite : #ECFFE0
+Dark Purple : #A22FB0
+White Smoke : #F5F5F5
+
+Dark Yello : #d3a800
+Light Yello : #ffd300
+*/
+
+html, body {
+    background-color: #FFF;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* ******************************
+              BUTTONS!
+     (Inspired by Bootstrap 3.0)
+   ****************************** */
+
+.btn {
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+    margin-bottom: 0;
+    color: #ECFFE0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #03256C;
+    /*white-space: nowrap;*/
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.btn:focus {
+    outline: none;
+
+}
+
+.btn:hover,
+.btn:focus {
+    text-decoration: none;
+    background-color: #2EC4B6;
+    color: white;
+    border: none;
+}
+.btn:active,
+.btn.active {
+    outline: none;
+}
+.btn2 {
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+    margin-bottom: 0;
+    color: #ECFFE0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #AAB8C2;
+    /*white-space: nowrap;*/
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.btn2:focus {
+    outline: none;
+
+}
+
+.btn2:hover,
+.btn2:focus {
+    text-decoration: none;
+    background-color: #2EC4B6;
+    color: white;
+    border: none;
+}
+.btn2:active,
+.btn2.active {
+    outline: none;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* ******************************
+          TITLE SCREEN
+     (intro-screen-template)
+   ****************************** */
+
+#gameArea {
+    height: 100%;
+    width: 100%;
+}
+
+.titleWrapper {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 30;
+    height: 50%;
+    width: 96%;
+    margin: auto;
+}
+
+.title {
+    margin: -20px auto;
+    text-align: center;
+    width: 100%;
+    font-family: 'Catamaran', sans-serif;
+    color: #d3a800;
+    font-weight: 900;
+    font-size: 8vw;
+  }
+
+.buttons {
+    width: 100%;
+    text-align: center;
+}
+
+/* ******************************
+          START SCREEN
+     (create-game-template)
+   ****************************** */
+
+.createGameWrapper, .joinGameWrapper, .gameOver {
+    font-family: 'Catamaran', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.createGameWrapper .info{
+    color: black;
+    font-weight: 400;
+    font-size: 2em;
+}
+#gameCode{
+  padding-top: 100px;
+}
+.HOST_koLiveBG{
+  background-image: url('https://www.knockout.fun/img/kolive/HOST_KOLive_BG.png');
+  /*background-position: center center;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.CLIENT_koLiveBG{
+  background-image: url('https://www.knockout.fun/img/kolive/CLIENT_KOLive_BG.png');
+  /*background-position: center center;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.createGameWrapper{
+    color: black;
+    font-weight: 300;
+    margin-top: 0px;
+
+}
+
+.info label {
+    display: block;
+}
+
+.info input {
+    text-align: center;
+    padding: 10px;
+    width: 250px;
+    height: 60px;
+    font-family: 'Catamaran', sans-serif;
+    color: black;
+    font-weight: 300;
+    font-size: 2em;
+    border: none;
+    border-bottom:  2px solid #333a40;
+    background: transparent;
+}
+
+.info input#inputPlayerName {
+    width: 50%;
+    color: black;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+#inputGameId{
+  color: black;
+}
+/*MOBILE PHONE SCREEN SETTINGS*/
+@media only screen
+and (max-device-width: 750px) {
+    .info{
+      margin-top: 6em;
+    }
+    .joinGameWrapper{
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+}
+/*TABLET SCREEN SETTINGS*/
+@media only screen
+  and (min-device-width: 750px)
+  and (max-device-width: 1024px)  {
+    .info{
+      margin-top: 8em;
+      font-size: 8vw;
+    }
+    .info label{
+      font-size: 5vw;
+    }
+    .info input{
+      margin-top: 10px;
+      margin-bottom: 50px;
+      font-size: 7vw;
+      padding-bottom: 30px;
+      height: 80px;
+    }
+    .joinGameWrapper{
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    .gameOver{
+      display: block;
+      height: 100%;
+      margin-top: 40%;
+      font-size: 200px;
+    }
+    #waitingFont{
+      font-size: 8vw;
+    }
+
+}
+
+
+/* ******************************
+           JOIN SCREEN
+      (join-game-template)
+   ****************************** */
+
+.joinGameWrapper {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 320px;
+    color: black;
+}
+
+.joinGameWrapper .info {
+    font-size: 1em;
+    color: black;
+    height: 20%;
+    padding-top: 8%;
+}
+
+.joinGameWrapper .btn {
+    width: 100%;
+    height: 50%;
+}
+
+#playerWaitingMessage {
+    font-size: .8em;
+}
+#playersWaiting1, #playersWaiting2, #playersWaiting3,#playersWaiting4, #playersWaiting5, #playersWaiting6{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 2vw;
+  color: black;
+  float: left;
+  list-style-type: none;
+  text-align: center;
+  display:inline-block;
+  vertical-align: middle;
+  float: none;
+}
+#removePlayer {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+#removePlayer:before{
+  content: '';
+  position: absolute;
+  width: 1%;
+  height: 2px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: transparent;
+}
+ #removePlayer:after{
+   content: '';
+   position: absolute;
+   width: 1%;
+   height: 2px;
+   top: 50%;
+   margin-top: -0.5px;
+   background: black;
+ }
+
+#removePlayer:before {
+  left: -2.5px;
+}
+#removePlayer:after {
+  right: 2.5px;
+  background: black;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+#removePlayer:hover:before {
+  background: black;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+#removePlayer:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+
+.createGameWrapper #gameURL {
+    font-size: 5em;
+    font-weight: bold;
+    color: black;
+}
+
+.createGameWrapper .gameId {
+    font-size: 6em;
+    color: black;
+}
+#teamsBtn{
+  margin-top: 5px;
+  width: 50%;
+  height: 60px;
+  font-size: 3vw;
+  font-weight: normal;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: #283267;
+  outline: none;
+}
+#btnStart{
+  margin-top: -20px;
+  width: 200px;
+  height: 60px;
+  color: white;
+  /*Responsive Fontfont-size: 2vw;*/
+  font-weight: normal;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+/*MOBILE PHONE SCREEN SETTINGS*/
+@media only screen
+  and (max-device-width: 750px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+  #btnStart{
+    font-size: 40px;
+  }
+}
+/*TABLET SCREEN SETTINGS*/
+@media only screen
+  and (min-device-width: 750px)
+  and (max-device-width: 1024px)  {
+    #btnStart{
+      margin-top: -80px;
+      height: 140px;
+      font-size: 80px;
+    }
+  }
+.switch-field {
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	overflow: hidden;
+  margin-right: 15%;
+  margin-top: -40px;
+}
+.block {
+    display: block;
+ }
+
+.switch-title {
+  margin-bottom: 6px;
+}
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+    right: 0;
+}
+
+.switch-field label {
+  float: right;
+}
+
+.switch-field label {
+  display: inline-block;
+  width: 80px;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: none;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #4356AD;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+#btnBeginGame{
+  width: 120px;
+  height: 60px;
+  font-size: 25px;
+  /*Responsive Fontfont-size: 2vw;*/
+  font-weight: normal;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+}
+#preTeamsBtn{
+  background-color: #778899;
+  margin-top: 5px;
+  width: 50%;
+  height: 60px;
+  font-size: 3vw;
+  font-weight: normal;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+#preTeamsBtn:hover{
+  background-color: #778899;
+  cursor: default;
+}
+.btn-primary{
+  background: #DB3A33;
+  background-color: #DB3A33;
+
+}
+#shuffleBtn{
+  background-color: transparent;
+  color: #004cb3;
+  margin-top: 5px;
+  width: 5%;
+  height: 45px;
+  font-size: 25px;
+  font-weight: normal;
+  margin-left: 15%;
+  margin-right: auto;
+  outline: none;
+}
+#shuffleBtn:focus{
+  outline: none;
+}
+#shuffleBtn:hover{
+  color: #006cff;
+  border: none;
+  outline: none;
+}
+#shuffleBtn:after{
+  outline: none;
+}
+.team1bg{
+}
+#teamsTable{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 15px;
+  color: black;
+  list-style-type: none;
+  display: inline;
+}
+#progressBar {
+  width: 50%;
+  margin: 10% auto;
+  height: 25px;
+  background-color: #AFDCEB ;
+  border-radius: 20px;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #227DB6 ;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.teamHealthBar{
+  background: #34A853;
+  border-radius: 20px;
+}
+.teamHealthBar {
+  color: #EA4335;
+  border-radius: 20px;
+}
+.teamHealthBar::-webkit-progress-value {
+  background: #34A853;
+  border-radius: 20px;
+}
+
+.teamHealthBar::-moz-progress-bar {
+  background: #EA4335;
+  border-radius: 20px;
+}
+
+.teamHealthBar::-webkit-progress-value {
+  background: #34A853;
+  border-radius: 20px;
+}
+
+.teamHealthBar::-webkit-progress-bar {
+  background: #EA4335;
+  border-radius: 20px;
+}
+
+/* ******************************
+          PLAYER GAME SCREEN
+
+   ****************************** */
+
+/*#teamSelect{
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-rows: repeat(2, 100px);
+  width: 75%;
+  margin-left: 25%;
+  position: absolute;
+  top: 50%;
+
+}*/
+
+
+.ccbtn {
+  font-size:20px;
+  font-family: 'Catamaran', sans-serif;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right:25px;
+  margin-bottom:25px;
+  text-transform: uppercase;
+}
+.ccbtn:hover {
+  opacity:0.9;
+  text-decoration: none;
+}
+/* Buttons Colors*/
+.btn-blue{
+	background: #3498db;
+}
+.btn-green{
+	background: #9ed151;
+}
+.btn-orange{
+	background: #cf9650;
+}
+.btn-red{
+	background: #d15551;
+}
+.btn-pink{
+	background: #cf4b86;
+}
+.btn-gray{
+	background: #665f5f;
+}
+.btn-purple{
+  background: #BA55D3;
+}
+.btn-simple{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;
+}
+
+
+
+
+/* ******************************
+            HOST SCREEN
+       (host-game-template)
+   ****************************** */
+
+/* Absolute Centering: http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/ */
+#wordArea {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+#hostWord {
+    height: 100%;
+    width: 100%;
+}
+
+#hostWord h2, #btnPlayerRestart h3 {
+    font-size: 161px;
+    line-height: 1em;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+/*
+#playerScores {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+*/
+.playerScore {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    height: 100%;
+}
+
+.playerScore span {
+    display: inline-block;
+    font-size: 1.3vw;
+    padding: 2%;
+    min-width: 10%;
+    margin: 0;
+}
+
+
+.playerScore .score {
+    text-align: center;
+    color: white;
+    background-color: #48A9A6;
+}
+
+.playerScore .playerName {
+    width: 20%;
+    color: white;
+    background-color: #283367;
+}
+/*MOBILE PHONE SCREEN SETTINGS*/
+@media only screen
+  and (max-device-width: 750px) {
+    .playerScore span{
+        display: inline-block;
+        font-size: 5vw;
+        padding: 2%;
+        min-width: 10%;
+        margin: 0;
+    }
+
+
+    .playerScore .score {
+        text-align: center;
+        background-color: #48A9A6;
+    }
+
+    .playerScore .playerName {
+        width: 20%;
+        color: white;
+        background-color: #283367;
+    }
+
+  }
+  /*TABLET SCREEN SETTINGS*/
+  @media only screen
+    and (min-device-width: 750px)
+    and (max-device-width: 1024px)  {
+      .playerScore span{
+          display: inline-block;
+          font-size: 5vw;
+          padding: 2%;
+          min-width: 10%;
+          margin: 0;
+      }
+      .playerScore .score {
+          text-align: center;
+          background-color: #48A9A6;
+      }
+
+      .playerScore .playerName {
+          width: 20%;
+          color: white;
+          background-color: #283367;
+      }
+
+    }
+
+#teamSelect{
+height: 90%;
+margin-top: 10%;
+}
+#pre-game-wrapper{
+  padding-top: 120px;
+}
+#w3-teamDeduct-row-1{
+  display: inline;
+  margin: auto;
+}
+#addPointsDiv{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+#addPoints{
+  height: 10%;
+  width: auto;
+}
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+}
+
+.btn-sq {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 10px;
+}
+
+.btn-sq-sm {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: 10px;
+}
+
+.btn-sq-xs {
+  width: 25px !important;
+  height: 25px !important;
+  padding:2px;
+}
+/*MOBILE PHONE SCREEN SETTINGS*/
+@media only screen
+  and (max-device-width: 750px) {
+    #teamSelect{
+    height: 90%;
+    margin-top: 20%;
+    margin-left: 10px;
+  }
+}
+/*TABLET SCREEN SETTINGS*/
+@media only screen
+  and (min-device-width: 750px)
+  and (max-device-width: 1024px)  {
+    #teamSelect{
+    height: 90%;
+    margin-top: 20%;
+    margin-left: 10px;
+  }
+  .ccbtn {
+    font-size:35px;
+    font-family: Arial;
+    color: #ffffff;
+    padding: 30px 30px 30px 30px;
+    text-decoration: none;
+    margin-right:25px;
+    margin-bottom:25px;
+    text-transform: uppercase;
+  }
+  .ccbtn:hover {
+    opacity:0.9;
+    text-decoration: none;
+  }
+  #addPoints{
+    height: 15%;
+    width: 50% !important;
+    padding: 30px 30px 30px 30px;
+    margin-right:25px;
+
+  }
+}
+
+#answer_bank{
+    position: fixed;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
+    bottom: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 40%;
+    list-style-type: none;
+    /*THIS ADJUSTS BUTTON FONT SIZE*/
+    font-size: 1vw;
+}
+#playerWordDiv{
+  height: 80%;
+  width:100%;
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+}
+#playerWord{
+  font-size: 7vw;
+  width: 100%;
+}
+#ulAnswers {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#ulAnswers li {
+    width: 100%;
+    height: 80%;
+    margin top: 20px;
+}
+
+.btnAnswer {
+    width: 100% ;
+    height: 75%;
+    margin-left: -40px;
+    /*border-bottom: 1px solid black;*/
+    font-weight: 400;
+    font-size: 3em;
+    color: black;
+    text-align: center;
+}
+/*MOBILE PHONE SCREEN SETTINGS*/
+@media only screen
+  and (max-device-width: 750px) {
+  #answerDiv{
+    position: fixed;
+    bottom: 0;
+  }
+  #playerWordDiv{
+    margin-top: 30%;
+  }
+  #playerWord{
+    font-size: 1.6em;
+  }
+  .outer2{
+      height: auto;
+      width: 100%;
+      margin-top: 60px !important;
+      margin-left: -50% !important;
+  }
+  #negativePoints{
+    font-size: 14px;
+
+  }
+  #answer_bank{
+    /*THIS ADJUSTS BUTTON FONT SIZE*/
+    font-size: 3vw;
+    position: fixed;
+    bottom: 0;
+  }
+  #ulAnswers{
+    width: 80%;
+    height: 100%;
+    padding: 10;
+  }
+  #ulAnswers li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 70%;
+  }
+  #ulAnswers li button{
+    height: 40%;
+  }
+  #btnAnswer{
+    height: 200px;
+    margin-bottom: 0px;
+    padding: 20px;
+  }
+  .gameOver {
+      display: block;
+      height: 20%;
+      margin-top: 30%;
+      font-size: 2em;
+  }
+
+}
+/*TABLET SCREEN SETTINGS*/
+@media only screen
+  and (min-device-width: 750px)
+  and (max-device-width: 1024px)  {
+    #answerDiv{
+      position: fixed;
+      bottom: 0;
+    }
+    #playerWordDiv{
+      margin-top: 10%;
+    }
+    #playerWord{
+      font-size: 18vw;
+      overflow-wrap: break-word;
+    }
+    #answer_bank{
+      /*THIS ADJUSTS BUTTON FONT SIZE*/
+      font-size: 2.5vw;
+      margin-bottom: 0px;
+      position: fixed;
+      bottom: 0;
+    }
+    #ulAnswers{
+      width: 80%;
+      height: 100%;
+      padding: 10;
+      margin-bottom: 0px;
+    }
+    #ulAnswers li{
+      padding-top: 20px;
+      padding-bottom: 0px;
+      height: 70%;
+      margin-bottom: 0px;
+    }
+    #ulAnswers li button{
+      height: 40%;
+      margin-bottom: 0px;
+
+    }
+    #btnAnswer{
+      height: 200px;
+      margin-bottom: 0px;
+      padding: 20px;
+    }
+    .gameOver {
+        display: block;
+        height: 20%;
+        margin-top: 30%;
+        font-size: 2em;
+    }
+
+  }
+
+
+/* ******************************
+          TITLE SCREEN
+     (intro-screen-template)
+   ****************************** */
+
+.gameOver {
+    display: block;
+    height: 20%;
+    padding-top: 10%;
+    font-size: 2em;
+}
+
+.btnGameOver {
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    bottom: 0;
+  }
+.outer{
+    width:300px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -150px;
+}
+.outer2{
+    position:absolute;
+    left:50%;
+    top:0%;
+    margin-top: 10px;
+    margin-left: -350px;
+}
+.inner {
+  display: inline-block;
+  color: white;
+  font-size: 2em;
+}
+#wrongAnswer{
+  padding: 50px;
+  background-color: #e84343;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  -moz-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+}
+#rightAnswer{
+  padding: 50px;
+  background-color: #3e9219;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  -moz-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+}
+#negativePoints{
+  padding: 0px 50px;
+  background-color: #fff;
+  color: red;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  -moz-box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+  box-shadow: 3px 39px 38px -13px rgba(0,0,0,0.56);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
