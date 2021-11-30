@@ -520,14 +520,17 @@ Local Host Setup
      password: "",
      database: "loginsystem",
    });*/
-     /*Online Setup*/
+     /*Online Setup
+Bluehost IP - 162.241.252.113
+162.241.252.113, Port: 21
+     */
 
 
     var mysql = require('mysql');
     var express = require('express');
     var con = mysql.createConnection({
-      host: "127.0.0.1",
-      port: "8080",
+      host: "162.241.252.113",
+      port: "21",
       user: "knockoy5_cbell11",
       password: "Chandler0522!",
       database: "knockoy5_WPZEL",
