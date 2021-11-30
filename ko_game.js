@@ -521,8 +521,8 @@ Local Host Setup
      password: "",
      database: "loginsystem",
    });*/
-     /*Online Setup
-     var con = mysql.createConnection({
+     /*Online Setup*/
+      var con = mysql.createConnection({
       host: "127.0.0.1",
       port: "3306",
       user: "knockoy5_cbell11",
@@ -552,7 +552,7 @@ Local Host Setup
      });
      con.end();
      console.log("Removed database connection...");
-     */
+     /*
      wordPool = [];
      wordPool.push( {
          'question': ['1+1'],
@@ -583,7 +583,7 @@ Local Host Setup
          'question': ['Capital of USA'],
          'cor_ans': ['Washington DC'],
          'decoys': [],
-     })
+     })*/
      console.log(wordPool)
 
 }
