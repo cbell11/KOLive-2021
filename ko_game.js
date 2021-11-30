@@ -502,8 +502,7 @@ function shuffle(sourceArray) {
 
 
 function populateQuestionPool(ko_id){
-  var mysql = require('mysql');
-  var express = require('express');
+
     /*
 DB4free
     var con = mysql.createConnection({
@@ -522,9 +521,13 @@ Local Host Setup
      database: "loginsystem",
    });*/
      /*Online Setup*/
-      var con = mysql.createConnection({
+
+
+    var mysql = require('mysql');
+    var express = require('express');
+    var con = mysql.createConnection({
       host: "127.0.0.1",
-      port: "3306",
+      port: "8080",
       user: "knockoy5_cbell11",
       password: "Chandler0522!",
       database: "knockoy5_WPZEL",
