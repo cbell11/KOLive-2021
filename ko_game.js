@@ -556,9 +556,9 @@ Bluehost IP - 162.241.252.113
        }
 
 
-     });*/
+     });
      con.end();
-     console.log("Removed database connection...");
+     console.log("Removed database connection...");*/
      
      wordPool = [];
      wordPool.push( {
