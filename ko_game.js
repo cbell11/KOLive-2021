@@ -529,7 +529,7 @@ Bluehost IP - 162.241.252.113
     var mysql = require('mysql');
     var express = require('express');
     var con = mysql.createConnection({
-      host: "162.241.252.113",
+      host: "127.0.0.1:21",
       port: "21",
       user: "knockoy5_cbell11",
       password: "Chandler0522!",
@@ -539,8 +539,9 @@ Bluehost IP - 162.241.252.113
       if (err) throw err;
       console.log("Connected to mysql!");
     });
+    
      var sql = mysql.format("SELECT * FROM qna WHERE ko_id='"+ko_id+"'");
-
+/*
      con.query(sql, function (err, rows, field) {
        if (err) throw err;
        console.log(rows);
@@ -551,14 +552,14 @@ Bluehost IP - 162.241.252.113
            'question': [rows[i].qna_q],
            'cor_ans': [rows[i].qna_a],
            'decoys': [],
-       });
+       });*/
        }
 
 
      });
      con.end();
      console.log("Removed database connection...");
-     /*
+     
      wordPool = [];
      wordPool.push( {
          'question': ['1+1'],
@@ -589,7 +590,7 @@ Bluehost IP - 162.241.252.113
          'question': ['Capital of USA'],
          'cor_ans': ['Washington DC'],
          'decoys': [],
-     })*/
+     })
      console.log(wordPool)
 
 }
