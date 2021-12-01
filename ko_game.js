@@ -553,10 +553,10 @@ Bluehost IP - 162.241.252.113
            'cor_ans': [rows[i].qna_a],
            'decoys': [],
        });
-       }*/
+       }
 
 
-     });
+     });*/
      con.end();
      console.log("Removed database connection...");
      
