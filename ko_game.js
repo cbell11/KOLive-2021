@@ -541,8 +541,8 @@ Bluehost IP - 162.241.252.113
     });
     
      var sql = mysql.format("SELECT * FROM qna WHERE ko_id='"+ko_id+"'");
-/*
-     con.query(sql, function (err, rows, field) {
+
+     /*con.query(sql, function (err, rows, field) {
        if (err) throw err;
        console.log(rows);
        for(var i = 0; i < rows.length; i++){
@@ -552,8 +552,8 @@ Bluehost IP - 162.241.252.113
            'question': [rows[i].qna_q],
            'cor_ans': [rows[i].qna_a],
            'decoys': [],
-       });*/
-       }
+       });
+       }*/
 
 
      });
