@@ -529,8 +529,8 @@ Bluehost IP - 162.241.252.113
     var mysql = require('mysql');
     var express = require('express');
     var con = mysql.createConnection({
-      host: "127.0.0.1:21",
-      port: "21",
+      host: "127.0.0.1",
+      port: "3306",
       user: "knockoy5_cbell11",
       password: "Chandler0522!",
       database: "knockoy5_WPZEL",
