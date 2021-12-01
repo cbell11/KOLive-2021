@@ -523,7 +523,7 @@ Local Host Setup
      /*Online Setup
 Bluehost IP - 162.241.252.113
 162.241.252.113, Port: 21
-     */
+     
 
 
     var mysql = require('mysql');
