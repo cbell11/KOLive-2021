@@ -4,6 +4,7 @@ var ko_id;
 var wordPool = [];
 var teamTotal = 0 ;
 var team = [];
+var gameString = [];
 
 /**
  * This function is called by index.js to initialize a new game instance.
@@ -50,7 +51,7 @@ exports.initGame = function(sio, socket){
 /**
  * The 'START' button was clicked and 'hostCreateNewGame' event occurred.
  */
-function hostCreateNewGame() {
+function hostCreateNewGame(setUpData) {
     // Create a unique Socket.IO Room
     var thisGameId = ( Math.random() * 100000 ) | 0;
 
@@ -59,6 +60,16 @@ function hostCreateNewGame() {
 
     // Join the Room and wait for the players
     this.join(thisGameId.toString());
+
+    //Check for URL Questions and ulAnswers
+
+
+    gameString = setUpData.gameString;
+     //console.log(gameString);
+    //console.log("Specific Question: " + gameString[0]);
+    //console.log("Specific Answer: "+ gameString[1]);
+
+
 
     wordPool = [];
     wordPool.length = 0;
@@ -523,7 +534,7 @@ Local Host Setup
      /*Online Setup
 Bluehost IP - 162.241.252.113
 162.241.252.113, Port: 21
-     
+
 
 
     var mysql = require('mysql');
@@ -539,7 +550,7 @@ Bluehost IP - 162.241.252.113
       if (err) throw err;
       console.log("Connected to mysql!");
     });
-    
+
      var sql = mysql.format("SELECT * FROM qna WHERE ko_id='"+ko_id+"'");
 
      /*con.query(sql, function (err, rows, field) {
@@ -559,9 +570,26 @@ Bluehost IP - 162.241.252.113
      });
      con.end();
      console.log("Removed database connection...");*/
-     
      wordPool = [];
-     wordPool.push( {
+     var tempQ = "";
+     var tempA = "";
+     for (var i = 0; i < gameString.length; i++) {
+       if (i % 2 == 0) {
+         tempQ = gameString[i]
+       }
+       else {
+         tempA = gameString[i];
+         wordPool.push( {
+             'question': [tempQ],
+             'cor_ans': [tempA],
+             'decoys': [],
+         });
+
+       }
+     }
+
+
+    /* wordPool.push( {
          'question': ['1+1'],
          'cor_ans': ['2'],
          'decoys': [],
@@ -590,7 +618,7 @@ Bluehost IP - 162.241.252.113
          'question': ['Capital of USA'],
          'cor_ans': ['Washington DC'],
          'decoys': [],
-     })
-     console.log(wordPool)
+     })*/
+     //console.log(wordPool)
 
 }
