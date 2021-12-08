@@ -52,10 +52,30 @@ jQuery(function($) {
     onConnected: function(data) {
       // Cache a copy of the client's socket.IO session ID on the App
       App.mySocketId = IO.socket.socket.sessionid;
-      //Experimenting HERE
+
       if (window.location.href.indexOf("GoLive") > -1) {
         App.Host.gameInit(data);
-        IO.socket.emit('hostCreateNewGame');
+        //Check URL for Questions and Answers
+        const queryString = window.location.search;
+        var gameString = "test";
+        var specificQ = "test";
+        var specificA = "test";
+
+        //Take the imploded PHP string and Decode it
+        var query1 = decodeURI(queryString);
+
+        //Turn the string into an array
+        query1 = query1.split(',');
+        query1.shift();
+
+       var setUpData = {
+          gameString: query1,
+          specificQ: query1[0],
+          specificA: query1[1],
+
+        }
+
+        IO.socket.emit('hostCreateNewGame', setUpData);
       } else {
         App.$gameArea.html(App.$templateJoinGame);
       }
@@ -64,7 +84,18 @@ jQuery(function($) {
 
 
       // console.log(data.message);*/
-    },
+      function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split('&');
+      for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('aParam');
+          if (decodeURIComponent(pair[0]) == variable) {
+              return decodeURIComponent(pair[1]);
+          }
+        }
+        console.log('Query variable %s not found', variable);
+  }
+      },
 
     /**
      * A new game has been created and a random game ID has been generated.
@@ -445,6 +476,7 @@ jQuery(function($) {
        * @param data{{ gameId: int, mySocketId: * }}
        */
       gameInit: function(data) {
+
         App.gameId = data.gameId;
         App.mySocketId = data.mySocketId;
         App.team1 = data.team1;
