@@ -65,7 +65,7 @@ jQuery(function($) {
         var query1 = decodeURI(queryString);
 
         //Turn the string into an array
-        query1 = query1.split(',');
+        query1 = query1.split('~');
         query1.shift();
 
        var setUpData = {
