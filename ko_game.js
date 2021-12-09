@@ -65,9 +65,9 @@ function hostCreateNewGame(setUpData) {
 
 
     gameString = setUpData.gameString;
-     //console.log(gameString);
-    //console.log("Specific Question: " + gameString[0]);
-    //console.log("Specific Answer: "+ gameString[1]);
+     console.log(gameString);
+     console.log("Specific Question: " + gameString[0]);
+     console.log("Specific Answer: "+ gameString[1]);
 
 
 
