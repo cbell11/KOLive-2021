@@ -1,14 +1,3 @@
-/*
-
- Dark Green : #78BD4C
-  Mid Green : #A8FF56
-       Lite : #ECFFE0
-Dark Purple : #A22FB0
-White Smoke : #F5F5F5
-
-Dark Yello : #d3a800
-Light Yello : #ffd300
-*/
 
 html, body {
     background-color: #FFF;
@@ -17,7 +6,6 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
 
 
 /* ******************************
@@ -183,8 +171,26 @@ html, body {
     margin-top: 0px;
 
 }
+#btnStart{
+  margin-top: -20px;
+  width: 200px;
+  height: 60px;
+  background-color: #DB3A34;
+  /*Responsive Fontfont-size: 2vw;*/
+  font-weight: normal;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+#btnStart:hover{
+  background-color: #bb2721;
+
+}
 
 .info label {
+  margin-top: 2%;
     display: block;
 }
 
@@ -236,7 +242,7 @@ and (max-device-width: 750px) {
       font-size: 8vw;
     }
     .info label{
-      font-size: 5vw;
+      font-size: 34px;
     }
     .info input{
       margin-top: 10px;
@@ -259,6 +265,23 @@ and (max-device-width: 750px) {
     #waitingFont{
       font-size: 8vw;
     }
+    #btnStart{
+      height: 100px;
+      width: 400px;
+      font-size: 40px;
+    }
+    @media screen and (orientation:landscape) {
+      .info label{
+        font-size: 24px;
+      }
+      #btnStart{
+        height: 50px;
+        width: 400px;
+        font-size: 24px;
+      }
+
+    }
+
 
 }
 
@@ -359,10 +382,10 @@ and (max-device-width: 750px) {
     color: black;
 }
 #teamsBtn{
-  margin-top: 5px;
+  margin: 10px;
   width: 50%;
   height: 60px;
-  font-size: 3vw;
+  font-size: 30px;
   font-weight: normal;
   position: absolute;
   margin-left: auto;
@@ -372,12 +395,14 @@ and (max-device-width: 750px) {
   background-color: #283267;
   outline: none;
 }
-#btnStart{
-  margin-top: -20px;
-  width: 200px;
-  height: 60px;
-  color: white;
-  /*Responsive Fontfont-size: 2vw;*/
+#preTeamsBtn{
+  background-color: #5f6f7e;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 50%;
+  height: 80px;
+  font-size: 3vw;
+  color: #fff;
   font-weight: normal;
   position: absolute;
   margin-left: auto;
@@ -385,6 +410,12 @@ and (max-device-width: 750px) {
   left: 0;
   right: 0;
 }
+#preTeamsBtn:hover{
+  background-color: #778899;
+  cursor: default;
+}
+
+
 /*MOBILE PHONE SCREEN SETTINGS*/
 @media only screen
   and (max-device-width: 750px)
@@ -397,12 +428,14 @@ and (max-device-width: 750px) {
 @media only screen
   and (min-device-width: 750px)
   and (max-device-width: 1024px)  {
-    #btnStart{
-      margin-top: -80px;
-      height: 140px;
-      font-size: 80px;
-    }
+
+
   }
+
+  /* ******************************
+             HOST Display Teams
+        (host-pre-game-template)
+     ****************************** */
 .switch-field {
   font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 	overflow: hidden;
@@ -481,28 +514,7 @@ and (max-device-width: 750px) {
   right: 0;
 
 }
-#preTeamsBtn{
-  background-color: #778899;
-  margin-top: 5px;
-  width: 50%;
-  height: 60px;
-  font-size: 3vw;
-  font-weight: normal;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-}
-#preTeamsBtn:hover{
-  background-color: #778899;
-  cursor: default;
-}
-.btn-primary{
-  background: #DB3A33;
-  background-color: #DB3A33;
 
-}
 #shuffleBtn{
   background-color: transparent;
   color: #004cb3;
@@ -528,12 +540,22 @@ and (max-device-width: 750px) {
 }
 .team1bg{
 }
-#teamsTable{
+#teamsTableHost{
   font-family: 'Catamaran', sans-serif;
-  font-size: 15px;
+  font-size: 28px;
   color: black;
   list-style-type: none;
   display: inline;
+}
+#teamsTable{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 38px;
+  color: black;
+  list-style-type: none;
+  display: inline;
+}
+.purpleBG{
+  background-color: #4357AD;
 }
 #progressBar {
   width: 50%;
@@ -585,20 +607,6 @@ and (max-device-width: 750px) {
           PLAYER GAME SCREEN
 
    ****************************** */
-
-/*#teamSelect{
-
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, 100px);
-  grid-template-rows: repeat(2, 100px);
-  width: 75%;
-  margin-left: 25%;
-  position: absolute;
-  top: 50%;
-
-}*/
-
 
 .ccbtn {
   font-size:20px;
