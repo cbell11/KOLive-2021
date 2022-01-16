@@ -544,10 +544,11 @@ jQuery(function($) {
         //Creates a minimum for the amount of players required
         if (App.Host.numPlayersInRoom < 4) {
           var playersNeeded = 4 - (App.Host.numPlayersInRoom);
-          $("#createGameContainer").html("<button id = 'preTeamsBtn' class = 'btn btn-primary' value = 'createGame' disabled><p style='margin-top: -8px;'>Waiting on +" + playersNeeded + " players</p></button>");
+          $("#createGameContainer").html("<button id = 'preTeamsBtn' class = 'btn btn-primary' value = 'createGame' disabled><p style=''>Waiting on +" + playersNeeded + " players</p></button>");
         } else {
           var currentPlayers = App.Host.numPlayersInRoom;
-          $("#createGameContainer").append("<button id = 'teamsBtn' class = 'btn btn-primary' value = 'createGame'><p style='margin-top: -8px;'>Start game with " + currentPlayers + " players</p></button>");
+          $('#preTeamsBtn').remove();
+          $("#createGameContainer").append("<button id = 'teamsBtn' class = 'btn btn-primary' value = 'createGame'><p style='''>Start game with " + currentPlayers + " players</p></button>");
         }
 
       },
@@ -563,10 +564,12 @@ jQuery(function($) {
         App.Host.numPlayersInRoom -= 1;
         if (App.Host.numPlayersInRoom < 4) {
           var playersNeeded = 4 - (App.Host.numPlayersInRoom);
-          $("#createGameContainer").html("<button id = 'preTeamsBtn' class = 'btn btn-primary' value = 'createGame' disabled><p style='margin-top: -8px;'>Waiting on +" + playersNeeded + " players</p></button>");
+          $('#preTeamsBtn').remove();
+          $("#createGameContainer").append("<button id = 'preTeamsBtn' class = 'btn' value = 'createGame' disabled><p style=''>Waiting on +" + playersNeeded + " players</p></button>");
         } else {
           var currentPlayers = App.Host.numPlayersInRoom;
-          $("#createGameContainer").append("<button id = 'teamsBtn' class = 'btn btn-primary' value = 'createGame'><p style='margin-top: -8px;'>Start game with " + currentPlayers + " players</p></button>");
+          $('#preTeamsBtn').remove();
+          $("#createGameContainer").append("<button id = 'preTeamsBtn' class = 'btn' value = 'createGame'><p style=''>Start game with " + currentPlayers + " players</p></button>");
         }
 
 
@@ -1770,6 +1773,8 @@ jQuery(function($) {
         if (arrayContains(App.Player.myName, data.team1)) {
           var team = data.team1;
           App.Player.team = 1;
+          //WORKING HERE
+        //  $('#player-pre-game-template').addClass('purpleBG');
           $('#teamMembers').append("<li><h2>Teammates</h2><br></li><br>");
           $('#teamContainer').addClass('team1bg')
           for (var i = 0; i < team.length; i++) {
@@ -1845,7 +1850,7 @@ jQuery(function($) {
           //App.$gameArea.html(App.$player1Game);
         }
         //Timeout Before
-        setTimeout(playerGameDisplay, 1000);
+        setTimeout(playerGameDisplay, 3000);
 
         //App.$gameArea.html(App.$playerGame);
       },
@@ -1858,7 +1863,7 @@ jQuery(function($) {
          var list;
          var question;
          //Gives Time for Questions and Answers to Populate Correctly
-         setTimeout(populate, 1000);
+         setTimeout(populate, 4000);
          function populate(){
 
          if (App.Player.team == 1) {
@@ -1925,7 +1930,7 @@ jQuery(function($) {
         var list;
         var question;
         //Gives Time for Questions and Answers to Populate Correctly
-        setTimeout(populate, 1000);
+        setTimeout(populate, 2500);
         function populate(){
 
           if (App.Player.team == 1 && data.teamID == 1) {
